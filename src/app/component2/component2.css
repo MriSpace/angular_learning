@@ -1,0 +1,62 @@
+
+
+.profile{
+    display: flex;
+    flex-direction: row;
+    background-color: blanchedalmond;
+    justify-content: left;
+    gap: 25px;
+}
+
+
+.namebox h3 {
+  color: red;
+}
+
+#name{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#ph{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#post{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.profdet{
+    background-color: pink;
+    display: flex;
+}
+
+#head1{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background-color: aqua;
+}
+
+.emp2 p{
+    margin: 0 0 4px 25px;
+}
+
+.emp1 p {
+    margin: 0 0 4px 0; /* top right bottom left */
+}
+
+#head2{
+    background-color: cornflowerblue;
+    margin-top: 2px;
+    margin-bottom: 2px; 
+}
+
+.list1{
+    background-color: darkseagreen;  /* ask why changing the margin top inside div class does not work but changes only in ul tag*/
+}
+
+#items{
+    margin-top: 2px;  
+}
