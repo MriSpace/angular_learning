@@ -5,11 +5,12 @@ import { MyComponent } from './my-component/my-component';
 import { Component2 } from './component2/component2';
 import { Profile } from './profile/profile';
 import { Forms } from './formscomp/formscomp';
+import { AngDirectives } from './ang-directives/ang-directives';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, ex1component,MyComponent, Component2, Profile, 
-            Forms],
+            Forms, AngDirectives],
   templateUrl: './app.html',
   styleUrl: './app.css',
   standalone: true
@@ -17,7 +18,7 @@ import { Forms } from './formscomp/formscomp';
 export class App {
   // protected readonly title = signal('helloWorld');
   
-  title: string = 'Hello';
+  title: string = 'Form';
   /*
   constructor() {
   console.log('App component initialized');

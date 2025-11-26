@@ -1,41 +1,126 @@
-<p>forms works!</p>
-<div class="container">
+<div class="form_main">
+    <div class="container">
 
-    <h2>User Profile Form</h2>
+        <h2>User Profile Form</h2>
 
-    <!-- Username Field -->
-    <label>Username</label>
-    <input type="text" [(ngModel)]="username" (keyup)="validateUsername()" placeholder="Enter username" />
+        <!-- Username Field -->
+        <label>Username</label>
+        <input type="text" [(ngModel)]="username" (keyup)="validateUsername()" placeholder="Enter username" />
 
-    <!-- Username Error Message -->
-    <p class="error" *ngIf="usernameError">{{ usernameError }}</p>
-    <!--shows or hides the error message depending on whether usernameError is true or false-->
+        <!-- Username Error Message -->
+        <p class="error" *ngIf="usernameError">{{ usernameError }}</p>
+        <!--shows or hides the error message depending on whether usernameError is true or false-->
 
 
-    <!-- Email Field -->
-    <label for="email">Email</label>
-    <input id="email" type="email" [(ngModel)]="email" (keyup)="validateEmail()" placeholder="Enter email" />
-    <!-- validateEmail will be called everytime user releases a key- keyup -->
-    
+        <!-- Email Field -->
+        <label for="email">Email</label>
+        <input id="email" type="email" [(ngModel)]="email" (keyup)="validateEmail()" placeholder="Enter email" />
+        <!-- validateEmail will be called everytime user releases a key- keyup -->
 
-    <label for="test">Yes or No</label>
-    <div class="cb">
-    <input type="checkbox" name="test" id="test">
+
+        <label for="test">Yes or No</label>
+        <div class="cb">
+            <input type="checkbox" [(ngModel)]="checkbox" name="test" id="test">
+        </div>
+
+        <!-- Email Error Message -->
+        <p class="error" *ngIf="emailError">{{ emailError }}</p>
+
+        <input type="date" [(ngModel)]="dob">
+
+        <input type="password" [(ngModel)]="password" placeholder="Enter your password">
+
+        <input type="number" [(ngModel)]="num" (keyup)="validateNum()" max="10" min="0" placeholder="enter a number">
+        <p class="error" *ngIf="numError">{{ numError }}</p>
+
+        <label>Select your field:</label>
+
+        <select [(ngModel)]="fieldSelect">
+            <option value="">--Select--</option>
+            <option *ngFor="let f of fields " [value]="f">{{ f }}</option>
+        </select>
+        <label>Country:</label>
+
+        <select [(ngModel)]="country">
+            <option value="">--Select--</option>
+            <option *ngFor="let f of countries " [value]="f.code">{{ f.name}}</option>
+        </select>
+
+
+        <!-- Submit Button -->
+        <button [disabled]="!isValid">Submit</button>
+
+
     </div>
 
-    <!-- Email Error Message -->
-    <p class="error" *ngIf="emailError">{{ emailError }}</p>
+    <div class="container data">
+        <h2>Submitted Form</h2>
+        <div class="container">
+            <table>
+                <!-- <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{username?username:''}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>{{dob}}</td>
+                    </tr>
+                    <tr>
+                        <td>Token</td>
+                        <td>{{num}}</td>
+                    </tr>
+                    <tr>
+                        <td>Pass</td>
+                        <td>{{password}}</td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>{{country}}</td>
+                    </tr>
+                    <tr>
+                        <td>Field</td>
+                        <td>{{fieldSelect}}</td>
+                    </tr>
+                    <tr>
+                        <td>checkbox</td>
+                        <td>{{checkbox}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <div class="tag_value">
+                <p>Date:</p>
+                <p>Token:</p>
+                <p>Pass:</p>
+                <p>Country:</p>
+                <p>Field:</p>
+                <p>checkbox:</p>
+            </div>
+            <div class="tag_value">
+                <p>{{dob}}</p>
+                <p>{{num}}</p>
+                <p>{{password}}</p>
+                <p>{{country}}</p>
+                <p>{{fieldSelect}}</p>
+                <p>{{checkbox}}</p>
+            </div> -->
+        </div>
 
-    <input type="date">
 
-    <input type="password" placeholder="Enter your password">
-
-    <input type="number" [(ngModel)] = "num" (keyup)="validateNum()" max="10" min="0" placeholder="enter a number">
-    <p class="error" *ngIf="numError">{{ numError }}</p>
-
-    
-
-    <!-- Submit Button -->
-    <button [disabled]="!isValid">Submit</button>
-
+    </div>
 </div>

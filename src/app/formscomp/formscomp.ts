@@ -13,12 +13,25 @@ export class Forms {
   username = '';
   email = '';
   num = '';
-
+  dob='';
+  checkbox=true;
   usernameError = '';
   emailError = '';
   numError = '';
+  password='';
+  country='';
 
   usernamePattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{3,8}$/;
+
+  fields = ["CSE", "MECH", "ECE", "CIVIL"]
+  countries: { code: string; name: string }[] = [
+    { code: 'US',  name: 'United States' },
+    { code: 'UK',  name: 'United Kingdom' },
+    { code: 'UAE', name: 'United Arab Emirates' },
+    { code: 'NZ',  name: 'New Zealand' }
+  ]
+  fieldSelect = ""
+  
 
   validateUsername() {
     if (!this.username) {
