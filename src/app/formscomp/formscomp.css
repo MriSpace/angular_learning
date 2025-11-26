@@ -1,4 +1,4 @@
-/* .container {
+.container {
   width: 350px;
   margin: 20px auto;
   display: flex;
@@ -30,13 +30,13 @@ button:disabled {
 
 .checkbox {
   margin-left: 0; /* brings it to the left */
-/*}*/
+}
 
 
-/* .cb{
+.cb{
   width: 100%;
   display: flex;
-  justify-content: flex-start; /*aligns only checkbox to left */
- /* gap: 6px;
-}*/
- 
+  justify-content: flex-start; /* aligns only checkbox to left */
+  gap: 6px;
+}
+

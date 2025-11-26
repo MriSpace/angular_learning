@@ -1,0 +1,41 @@
+<p>forms works!</p>
+<div class="container">
+
+    <h2>User Profile Form</h2>
+
+    <!-- Username Field -->
+    <label>Username</label>
+    <input type="text" [(ngModel)]="username" (keyup)="validateUsername()" placeholder="Enter username" />
+
+    <!-- Username Error Message -->
+    <p class="error" *ngIf="usernameError">{{ usernameError }}</p>
+    <!--shows or hides the error message depending on whether usernameError is true or false-->
+
+
+    <!-- Email Field -->
+    <label for="email">Email</label>
+    <input id="email" type="email" [(ngModel)]="email" (keyup)="validateEmail()" placeholder="Enter email" />
+    <!-- validateEmail will be called everytime user releases a key- keyup -->
+    
+
+    <label for="test">Yes or No</label>
+    <div class="cb">
+    <input type="checkbox" name="test" id="test">
+    </div>
+
+    <!-- Email Error Message -->
+    <p class="error" *ngIf="emailError">{{ emailError }}</p>
+
+    <input type="date">
+
+    <input type="password" placeholder="Enter your password">
+
+    <input type="number" [(ngModel)] = "num" (keyup)="validateNum()" max="10" min="0" placeholder="enter a number">
+    <p class="error" *ngIf="numError">{{ numError }}</p>
+
+    
+
+    <!-- Submit Button -->
+    <button [disabled]="!isValid">Submit</button>
+
+</div>

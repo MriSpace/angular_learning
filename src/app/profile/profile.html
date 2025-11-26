@@ -1,44 +1,56 @@
-<!-- <p>profile works!</p>
+<p>profile works!</p>
 
 
 <h2>User Profile</h2>
 
-<p>Current Name: {{ username }}</p> --><!-- Interpolation -->
+<p>Current Name: {{ username }}</p> <!-- Interpolation -->
 
-<!-- <input type="text" [(ngModel)]="username" /> --><!-- optional two-way binding -->
+ <input type="text" [(ngModel)]="username" /><!-- optional two-way binding -->
 
-<!-- <p>Updated Name: {{ displayName }}</p>
+<p>Updated Name: {{ displayName }}</p>
 
-<button type=""  [disabled]="isEditDisabled" (click)="updateName()">  -->
+<button type=""  [disabled]="isEditDisabled" (click)="updateName()">  
 <!-- Property binding disabled--><!-- Event binding click-->
-<!-- Save Name
-</button>   -->
+ Save Name
+</button>   
 
 
-<div class="container">
+
+
+<!--NEW STUFFFFFFFFFFF-->
+
+<!-- <div class="container">
 
     <h2>User Profile Form</h2>
 
-    <!-- Username Field -->
+    
     <label>Username</label>
     <input type="text" [(ngModel)]="username" (keyup)="validateUsername()" placeholder="Enter username" />
 
-    <!-- Username Error Message -->
-    <p class="error" *ngIf="usernameError">{{ usernameError }}</p>
+    <p class="error" *ngIf="usernameError">{{ usernameError }}</p> -->
     <!--shows or hides the error message depending on whether usernameError is true or false-->
 
 
-    <!-- Email Field -->
-    <label for="email">Email</label>
-    <input id="email" type="email" [(ngModel)]="email" (keyup)="validateEmail()" placeholder="Enter email" />
+    
+   <!-- <label for="email">Email</label>
+    <input id="email" type="email" [(ngModel)]="email" (keyup)="validateEmail()" placeholder="Enter email" />-->
     <!-- validateEmail will be called everytime user releases a key- keyup -->
-     <label for="test">Yes or No</label>
+    
+
+    <!-- <label for="test">Yes or No</label>
+    <div class="cb">
     <input type="checkbox" name="test" id="test">
+    </div> -->
+
     <!-- Email Error Message -->
-    <p class="error" *ngIf="emailError">{{ emailError }}</p>
+    <!-- <p class="error" *ngIf="emailError">{{ emailError }}</p>
+
+    <input type="date">
+
+    <input type="password" placeholder="Enter your password"> -->
 
 
     <!-- Submit Button -->
-    <button [disabled]="!isValid">Submit</button>
+    <!-- <button [disabled]="!isValid">Submit</button> -->
 
-</div>
+<!-- </div> --> 
