@@ -5,12 +5,13 @@ import { MyComponent } from './my-component/my-component';
 import { Component2 } from './component2/component2';
 import { Profile } from './profile/profile';
 import { Forms } from './formscomp/formscomp';
-import { AngDirectives } from './ang-directives/;
+// import { AngDirectives } from './ang-directives/ang-directives';
+import { TemplateDrivenForm } from './template-driven-form/template-driven-form';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, ex1component,MyComponent, Component2, Profile, 
-            Forms, AngDirectives],
+            Forms, TemplateDrivenForm],
   templateUrl: './app.html',
   styleUrl: './app.css',
   standalone: true
