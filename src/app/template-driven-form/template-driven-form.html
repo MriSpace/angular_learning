@@ -1,0 +1,98 @@
+<p>template-driven-form works!</p>
+<div class="form_main">
+    <div class="container">
+        <h2>User Profile Form</h2>
+
+        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+
+            <!-- Username Field -->
+            <label>Username</label>
+            <!-- <input 
+                type="text" 
+                name="username"
+                [(ngModel)]="username" 
+                (blur)="validateUsername()"
+                #username="ngModel"
+                required
+                placeholder="Enter username" 
+            />
+            <p class="error" *ngIf="username.invalid && username.touched">must contain 1</p> -->
+
+            <!-- <input type="text" name="username" minlength="5" [(ngModel)]="username" #usernameCtrl="ngModel"
+                (keyup)="validateUsername()" required /> -->
+
+            <!-- Show TS validation errors -->
+            <!-- <p class="error" *ngIf="usernameCtrl.invalid && usernameCtrl.touched">{{ usernameCtrl.('minlength')
+                ? 'Username must contain at least 5 characters' : 'Username is required' }}</p> -->
+            <!-- @if(usernameError){ -->
+            <!-- <p class="error">{{usernameError}}</p> -->
+            <!-- } -->
+            <input type="text" name="username" minlength="5" [(ngModel)]="username" #usernameCtrl="ngModel" required />
+
+            <p class="error" *ngIf="usernameCtrl.invalid && usernameCtrl.touched">
+
+                <!-- Required -->
+                <span *ngIf="usernameCtrl.errors?.['required']">
+                    Username is required
+                </span>
+
+                <!-- Minlength -->
+                <span *ngIf="usernameCtrl.errors?.['minlength']">
+                    Username must contain at least 1 uppercase, 1 symbol and 1 digit and minimum 5 characters
+                </span>
+
+            </p>
+
+            <!-- Email Field -->
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" [(ngModel)]="email" 
+                #emailCtrl="ngModel" required email placeholder="Enter email" />
+            <!-- Angular errors -->
+            <p class="error" *ngIf="emailCtrl.invalid && emailCtrl.dirty">
+
+                <!-- Required -->
+                <span *ngIf="emailCtrl.errors?.['required']">Email is required</span>
+
+                <!-- Invalid email format -->
+                <span *ngIf="emailCtrl.errors?.['email']">Enter a valid email</span>
+            </p>
+
+            <!-- Checkbox -->
+            <label for="test">Yes or No</label>
+            <div class="cb">
+                <input type="checkbox" name="checkbox" [(ngModel)]="checkbox" id="test">
+            </div>
+
+            <!-- Date -->
+            <input type="date" name="dob" [(ngModel)]="dob">
+
+            <!-- Password -->
+            <input type="password" name="password" [(ngModel)]="password" placeholder="Enter your password">
+
+            <!-- Number -->
+            <input type="number" name="num" [(ngModel)]="num" (keyup)="validateNum()" #num="ngModel" max="10" min="0"
+                placeholder="enter a number">
+            <p class="error" *ngIf="num.invalid && num.touched">{{ numError }}</p>
+
+            <!-- Field Select -->
+            <label>Select your field:</label>
+            <select name="fieldSelect" [(ngModel)]="fieldSelect">
+                <option value="">--Select--</option>
+                <option *ngFor="let f of fields" [value]="f">{{ f }}</option>
+            </select>
+
+            <!-- Country Select -->
+            <label>Country:</label>
+            <select name="country" [(ngModel)]="country">
+                <option value="">--Select--</option>
+                <option *ngFor="let c of countries" [value]="c.code">{{ c.name }}</option>
+            </select>
+
+            <!-- Submit Button -->
+            <!-- <button type="submit" [disabled]="userForm.invalid || !isValid">Submit</button> -->
+            <button type="submit" [disabled]="userForm.invalid">Submit</button>
+        </form>
+    </div>
+
+    <!-- ...existing table code... -->
+</div>
