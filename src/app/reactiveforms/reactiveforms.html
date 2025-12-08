@@ -1,1 +1,58 @@
 <p>reactiveforms works!</p>
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div class="container">
+        <!-- Username -->
+        <div>
+            <label>Username</label>
+            <input type="text" formControlName="username">
+            <p class="error" *ngIf="myForm.get('username')?.invalid &&  myForm.get('username')?.touched">
+                <span *ngIf="myForm.get('username')?.errors?.['required']">Username is required</span>
+                <span *ngIf="myForm.get('username')?.errors?.['minlength']">Username must be at least 5 characters.
+                </span>
+                <span *ngIf="myForm.get('username')?.errors?.['hasSpace']">Username cannot contain spaces</span>
+
+
+            </p>
+        </div>
+
+        <div>
+            <!-- Email -->
+            <label>Email</label>
+            <input type="email" formControlName="email">
+            <p class="error" *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+                <span *ngIf="myForm.get('email')?.errors?.['required']">Email is required</span>
+                <span *ngIf="myForm.get('email')?.errors?.['email']">Enter a valid email</span>
+            </p>
+        </div>
+
+        <label>Password</label>
+        <input type="password" formControlName="password">
+
+        <p class="error" *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched">
+            Password is required
+        </p>
+
+        <label>Confirm Password</label>
+        <input type="password" formControlName="confirmPassword">
+
+
+        <p class="error" *ngIf="myForm.errors?.['passwordMismatch'] && myForm.touched">
+            Passwords do not match
+        </p>
+
+
+
+        <label>Select date</label>
+        <input type="date" formControlName="deliveryDate">
+
+        <p class="error" *ngIf="myForm.get('deliveryDate')?.errors?.['pastDate']">
+            Date cannot be in the past
+        </p>
+
+
+        <div class="submitbutton">
+            <button type="submit" [disabled]="myForm.invalid">Submit</button>
+        </div>
+
+    </div>
+</form>

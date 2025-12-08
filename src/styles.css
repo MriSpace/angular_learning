@@ -13,3 +13,32 @@ button:disabled {
   cursor: not-allowed;
   color: #a9a9a9;
 }
+/* Global input styles */
+input, textarea, select {
+  margin: 12px;
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus state for inputs */
+input:focus, textarea:focus, select:focus {
+  border-color: crimson;
+  box-shadow: 0 0 5px rgba(220, 20, 60, 0.5);
+}
+
+/* Disabled inputs */
+input:disabled, textarea:disabled, select:disabled {
+  background-color: #f0f0f0;
+  color: #a9a9a9;
+  cursor: not-allowed;
+}
+
+/* Placeholder styling */
+input::placeholder, textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
